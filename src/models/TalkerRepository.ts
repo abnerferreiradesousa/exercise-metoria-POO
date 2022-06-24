@@ -1,22 +1,22 @@
 import { ResultSetHeader, RowDataPacket } from 'mysql2';
-import { Talker } from '../interfaces';
+import { ITalker } from '../interfaces';
 import conn from './connection';
 
-export const find = async (id: number): Promise<Talker> => {
+export const find = async (id: number): Promise<ITalker> => {
   const query = 'SELECT * FROM exercises.talker WHERE ID=?';
   const [talker] = await conn.execute<RowDataPacket[]>(query, [id]);
 
-  return talker[0] as Talker;
+  return talker[0] as ITalker;
 }
 
-export const findDisplayOrder =  async (displayOrder: number): Promise<Talker> => {
+export const findDisplayOrder =  async (displayOrder: number): Promise<ITalker> => {
   const query = 'SELECT * FROM exercises.talker WHERE display_order=?';
   const [[result]] = await conn.execute<RowDataPacket[]>(query, [displayOrder]);
 
-  return result as Talker;
+  return result as ITalker;
 }
 
-export const create = async ({ name, age, displayOrder }: Talker): Promise<number> => {
+export const create = async ({ name, age, displayOrder }: ITalker): Promise<number> => {
   const query = 'INSERT INTO exercises.talker (name, age, display_order) VALUES(?, ?, ?)'
   const [newTalker] = await conn.execute<ResultSetHeader>(query, [name, age, displayOrder]);
 

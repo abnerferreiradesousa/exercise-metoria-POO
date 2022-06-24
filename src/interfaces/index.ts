@@ -1,13 +1,13 @@
-export interface Person {
+export interface IPerson {
   id?: number;
   name: string;
   age: number;
 }
 
-export interface Spectator extends Person {
+export interface ISpectator extends IPerson {
   position: number;
 }
 
-export interface Talker extends Person {
+export interface ITalker extends IPerson {
   displayOrder: number;
 }

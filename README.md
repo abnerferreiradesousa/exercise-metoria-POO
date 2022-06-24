@@ -6,9 +6,16 @@ Este repositório é dedicado a exercícios complementares fora do conteúdo do 
 
 Nossa equipe foi contratada para realizarmos mudanças em uma aplicação que já está pronta. Atualmente ela está usando o **paradigma estrutural** e o objetivo vai ser refatorar ela usando **orientação a objeto**. :wink: :smile:
 
+## Configurando a aplicação:
+
+- Renomeie o arquivo ```.env.example``` para ```.env``` e configure as variáveis de ambiente.
+
+- Utilize o arquivo ```database.sql``` para subir o banco de dados.
+
+
 ## Desafios :thinking: :eyes:
 
-#### Desafio - Refatorando a aplicação:
+### Refatorando a aplicação:
 
 Refatore a aplicação utilizando o paradigma de  programação orientada a objetos e os princípios SOLID.
 
