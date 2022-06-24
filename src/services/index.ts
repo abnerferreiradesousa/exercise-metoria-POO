@@ -1,12 +1,11 @@
-import { ReqPerson, Spectator, Talker } from '../interfaces';
-import * as personRepository from '../models/PersonRepository';
+import { Spectator, Talker } from '../interfaces';
 import * as talkerRepository from '../models/TalkerRepository';
 import * as spectatorRepository from '../models/SpectatorRepository';
 import * as validators from '../utils';
 
 // Talkers
 
-export const createTalker = async (talkerInfo: ReqPerson, displayOrder: Talker['displayOrder']): Promise<{ id: number } | validators.error> => {
+export const createTalker = async (talkerInfo: Pick<Talker, 'name' | 'age'>, displayOrder: Talker['displayOrder']): Promise<{ id: number } | validators.error> => {
   const { name, age } = talkerInfo;
   const validPerson = validators.validatePerson(name, age);
 
@@ -52,7 +51,7 @@ export const deleteTalker = async (id: number): Promise<void | validators.error>
 
 // Spectators
 
-export const createSpectator = async (spectatorInfo: ReqPerson, position: Spectator['position']) => {
+export const createSpectator = async (spectatorInfo: Pick<Talker, 'name' | 'age'>, position: Spectator['position']) => {
   const { name, age } = spectatorInfo;
   const validPerson = validators.validatePerson(name, age);
 
