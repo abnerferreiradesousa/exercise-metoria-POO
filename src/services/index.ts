@@ -1,6 +1,6 @@
 import { ISpectator, ITalker } from '../interfaces';
-import * as talkerRepository from '../models/TalkerRepository';
-import * as spectatorRepository from '../models/SpectatorRepository';
+import * as talkerRepository from '../models/TalkerModels';
+import * as spectatorRepository from '../models/SpectatorModels';
 import * as validators from '../utils';
 
 // Talkers

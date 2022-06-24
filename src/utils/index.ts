@@ -1,5 +1,5 @@
-import * as TalkerRepository from '../models/TalkerRepository';
-import * as SpectatorRepository from '../models/SpectatorRepository';
+import * as TalkerRepository from '../models/TalkerModels';
+import * as SpectatorRepository from '../models/SpectatorModels';
 
 export interface error {
   error: string;
