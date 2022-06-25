@@ -11,8 +11,8 @@ import connection from '../models/connection';
 export default class TalkerService {
   public model: TalkerModel;
 
-  constructor() {
-    this.model = new TalkerModel(connection);
+  constructor(model: TalkerModel) {
+    this.model = model;
   }
 
   getTalker = async (id: number): Promise<ITalker | validators.error > => {

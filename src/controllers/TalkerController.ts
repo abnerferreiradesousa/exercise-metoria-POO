@@ -1,18 +1,18 @@
 import { Request, Response } from 'express';
 
 // import * as service from '../services'
-import TalkerService from '../services/index';
+import TalkerService from '../services/TalkerService';
 
 //talker
 
 export default class TalkerController {
-  constructor(public talkerService = new TalkerService()) {
-    this.talkerService = talkerService;
+  constructor(public service: TalkerService) {
+    this.service = service;
   }
 
   getTalker = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const talker = await this.talkerService.getTalker(Number(id));
+    const talker = await this.service.getTalker(Number(id));
   
     if ('error' in talker) {
       return res.status(talker.statusCode).json({ error: talker.error })

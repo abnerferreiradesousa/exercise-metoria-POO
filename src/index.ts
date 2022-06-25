@@ -1,9 +1,15 @@
 import express from 'express';
 
 
-import TalkerController from './controllers/index';
+import TalkerController from './controllers/TalkerController';
+import TalkerService from './services/TalkerService';
+import TalkerModel from './models/TalkerModels';
+import connection from './models/connection';
 
-const Controller = new TalkerController()
+
+const Model = new TalkerModel(connection)
+const Service = new TalkerService(Model)
+const Controller = new TalkerController(Service)
 
 const app = express();
 
